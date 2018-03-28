@@ -1,0 +1,9 @@
+#!/usr/bin/env ruby
+
+require 'bundler/setup'
+require 's3lite'
+require 'irb'
+S3lite.aws_key = ENV['AWS_ACCESS_KEY_ID']
+S3lite.aws_secret_key = ENV['AWS_SECRET_ACCESS_KEY']
+S3lite.s3_bucket = ENV['S3_BUCKET']
+IRB.start(__FILE__)
