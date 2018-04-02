@@ -46,7 +46,7 @@ RSpec.describe S3lite::S3 do
       S3lite.aws_key = 'K3Y'
       S3lite.aws_secret_key = 'S3CR3T'
       S3lite.s3_bucket = 'BUCK3T'
-      expect(TestClass.new.send(:s3_resource).class).to eq Aws::S3::Resource
+      expect(S3lite::S3Resource.send(:s3_resource).class).to eq Aws::S3::Resource
     end
 
     context 'errors' do
@@ -55,7 +55,7 @@ RSpec.describe S3lite::S3 do
           S3lite.aws_key = nil
           S3lite.aws_secret_key = nil
           S3lite.s3_bucket = nil
-          TestClass.new.send(:s3_resource_object, 'test')
+          S3lite::S3Resource.send(:s3_resource_object, 'test')
         end.to raise_error('No AWS S3 Bucket Set')
       end
 
@@ -63,7 +63,7 @@ RSpec.describe S3lite::S3 do
         expect do
           S3lite.aws_key = nil
           S3lite.aws_secret_key = nil
-          TestClass.new.send(:s3_resource)
+          S3lite::S3Resource.send(:s3_resource)
         end.to raise_error('No AWS Access Key Set')
       end
 
@@ -71,7 +71,7 @@ RSpec.describe S3lite::S3 do
         expect do
           S3lite.aws_key = 'K3Y'
           S3lite.aws_secret_key = nil
-          TestClass.new.send(:s3_resource)
+          S3lite::S3Resource.send(:s3_resource)
         end.to raise_error('No AWS Secret Access Key Set')
       end
     end

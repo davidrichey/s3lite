@@ -1,4 +1,4 @@
-module S3lite::S3Helper
+module S3lite::S3Resource
   class << self
     def s3_resource_object(path)
       raise 'No AWS S3 Bucket Set' if S3lite.s3_bucket.nil?

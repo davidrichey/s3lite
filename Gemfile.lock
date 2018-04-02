@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    s3lite (0.0.1)
+    s3lite (0.0.3.pre.2)
       aws-sdk-s3 (~> 1)
 
 GEM
@@ -9,8 +9,8 @@ GEM
   specs:
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
-    aws-partitions (1.73.0)
-    aws-sdk-core (3.17.1)
+    aws-partitions (1.76.0)
+    aws-sdk-core (3.18.1)
       aws-partitions (~> 1.0)
       aws-sigv4 (~> 1.0)
       jmespath (~> 1.0)

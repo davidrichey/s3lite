@@ -1,6 +1,6 @@
 require 's3lite/version'
 require 's3lite/parse'
-require 's3lite/s3_helper'
+require 's3lite/s3_resource'
 require 's3lite/s3'
 require 's3lite/base'
 
